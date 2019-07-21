@@ -1,0 +1,3 @@
+break * vfprintf+9666
+disable $bpnum
+

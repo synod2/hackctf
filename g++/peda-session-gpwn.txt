@@ -1,0 +1,4 @@
+break *  0x08049211
+break * vuln+42
+break *  0x080492b0
+
