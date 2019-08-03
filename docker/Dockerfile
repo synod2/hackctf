@@ -1,7 +1,22 @@
 # run systemctl restart docker before build this.
 #docker build --no-cache -t ubuntu16 .
-#docker run -i -t --name fengshui ubuntu16 /bin/bash
+#docker run -p 2323:2323 -i -t --cap-add=SYS_PTRACE --security-opt seccomp=unconfined --name fengshui ubuntu16 /bin/bash 
 #for glibc version 2.23
+
+# host -> container
+#docker cp /home/synod2/synod2/hackctf/fengshui/fengshui fengshui:/root/fengshui
+
+#container -> host
+#docker cp fengshui:/path/foo.txt /path/foo.txt
+
+#docker attach fengshui
+#docker exec fengshui /bin/sh
+
+# gdb q 
+# target remote 127.0.0.1:2323 fengshui
+
+# gdbserver 127.0.0.1:2323 fengshui
+
 
 FROM ubuntu:16.04
 MAINTAINER synod2
