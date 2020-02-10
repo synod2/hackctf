@@ -2,6 +2,7 @@ from pwn import *
 #32bit binary
 #input 2 and 4, make a lot of money. 
 #p = process("./rtl_world")
+#simple RTL..
 p = remote("ctf.j0n9hyun.xyz",3010)
 
 p.sendlineafter(">>> ","2 4")
