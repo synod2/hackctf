@@ -5,10 +5,13 @@ pwn
 desc 
 ---------------
 
+- double free bug
+- got overwrite 
+
 files 
 ---------------
--childheap
--libc.so.6(glibc 2.23->ubuntu 16.04)
+- childheap
+- libc.so.6(glibc 2.23->ubuntu 16.04)
 
 
 checksec 
