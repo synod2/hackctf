@@ -1,0 +1,49 @@
+   0:   0f 05                   syscall 
+   2:   48                      dec    eax
+   3:   31 ed                   xor    ebp,ebp
+   5:   48                      dec    eax
+   6:   31 e4                   xor    esp,esp
+   8:   48                      dec    eax
+   9:   31 c0                   xor    eax,eax
+   b:   48                      dec    eax
+   c:   31 db                   xor    ebx,ebx
+   e:   48                      dec    eax
+   f:   31 c9                   xor    ecx,ecx
+  11:   48                      dec    eax
+  12:   31 f6                   xor    esi,esi
+  14:   48                      dec    eax
+  15:   31 ff                   xor    edi,edi
+  17:   4d                      dec    ebp
+  18:   31 c0                   xor    eax,eax
+  1a:   4d                      dec    ebp
+  1b:   31 c9                   xor    ecx,ecx
+  1d:   4d                      dec    ebp
+  1e:   31 d2                   xor    edx,edx
+  20:   4d                      dec    ebp
+  21:   31 db                   xor    ebx,ebx
+  23:   4d                      dec    ebp
+  24:   31 e4                   xor    esp,esp
+  26:   4d                      dec    ebp
+  27:   31 ed                   xor    ebp,ebp
+  29:   4d                      dec    ebp
+  2a:   31 f6                   xor    esi,esi
+  2c:   4d                      dec    ebp
+  2d:   31 ff                   xor    edi,edi
+  2f:   66 be f1 de             mov    si,0xdef1
+   0:   0f 05                   syscall 
+   2:   48 31 ed                xor    rbp,rbp
+   5:   48 31 e4                xor    rsp,rsp
+   8:   48 31 c0                xor    rax,rax
+   b:   48 31 db                xor    rbx,rbx
+   e:   48 31 c9                xor    rcx,rcx
+  11:   48 31 f6                xor    rsi,rsi
+  14:   48 31 ff                xor    rdi,rdi
+  17:   4d 31 c0                xor    r8,r8
+  1a:   4d 31 c9                xor    r9,r9
+  1d:   4d 31 d2                xor    r10,r10
+  20:   4d 31 db                xor    r11,r11
+  23:   4d 31 e4                xor    r12,r12
+  26:   4d 31 ed                xor    r13,r13
+  29:   4d 31 f6                xor    r14,r14
+  2c:   4d 31 ff                xor    r15,r15
+  2f:   66 be f1 de             mov    si,0xdef1
